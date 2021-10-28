@@ -1,5 +1,6 @@
 import img from './Cigna.png'
 import wb from './wb.png'
+import wc from './wc.png'
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -30,7 +31,7 @@ export default function App() {
 
   const handleWellnessClose = () => {
     setWellnessOpen(false);
-  };
+  }; 
 
   const [learningOpen, setLearningOpen] = React.useState(false);
   
@@ -52,7 +53,7 @@ export default function App() {
     setNetowrkingOpen(false);
   };
 
-  const rerouteToWB= () => window.open("www.google.com")
+  const rerouteToWB= () => window.open("http://www.google.com")
 
   return (
 <div>
@@ -65,18 +66,18 @@ style={{ minHeight: '100vh' }}
 >
 
   <Grid item xs={3}>
-    <Card sx={{ maxWidth: 345 }}
-    width= {200}
-    height = {500}>
+    <Card sx={{  }} >
       <CardMedia
         component="img"
         height="140"
-        image={img}
+        image={wb}
         alt="Wellness Goals"
+        height={400}
+        
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Wellness Goals
+          WellBeats
         </Typography>
         <Typography variant="body2" color="text.secondary">
           Improve your wellbeing with access to Wellbeats
@@ -88,8 +89,15 @@ style={{ minHeight: '100vh' }}
         open={wellnessOpen}
         onClose={handleWellnessClose}
       >
-        <DialogTitle>Wellness Goals</DialogTitle>
         <DialogContent>
+        <Grid
+        container
+        spacing={5}
+        alignItems="center"
+        justifyContent="center"
+        style={{ minHeight: '1vh' }}
+        >
+        <Grid item xs={12}>
         <Card sx={{ maxWidth: 1000 }}>
           <CardMedia
             component="img"
@@ -97,17 +105,25 @@ style={{ minHeight: '100vh' }}
             image={wb}
             alt="Wellness Goals"
           />
-          <CardContent>
-            <Typography variant="body2" color="text.secondary">
-              webeats offers .. . .. .. . . .. .aef e fe fe fa ef  ae faef  a f a f  ea f e a f a ef  a f 
-            </Typography>
-          </CardContent>
+         
           <CardActions>
             <Button size="large" onClick={rerouteToWB}>Open Wellbeats</Button>
             
           </CardActions>
         </Card>
-          
+        </Grid>
+        <Grid item xs={12}>
+        <Card sx={{ maxWidth: 1000 }}>
+         
+          <CardContent>
+            <Typography variant="h8" color="text.secondary">
+              webeats offers a variety of health related classes, including exersize workouts, mindfullness and meditation, mental health classes, nutrition classes, and more. From two minute office stretch breaks to healthy recipes, Wellbeats has something to offer for everyone
+            </Typography>
+          </CardContent>
+        </Card>
+        </Grid>
+
+        </Grid>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleWellnessClose}>Close</Button>
@@ -115,22 +131,24 @@ style={{ minHeight: '100vh' }}
       </Dialog>
       </CardActions>
     </Card>
+    
   </Grid>  
 
   <Grid item xs={3}>
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ }}>
       <CardMedia
         component="img"
         height="140"
-        image={img}
+        image={wc}
         alt="Learning Goals"
+        height={400}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Learning Goals
+          Cigna Wellness Challenge
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Challenge yourself with new Learning Goals
+          Challenge yourself with wellness objectives
         </Typography>
       </CardContent>
       <CardActions>
@@ -171,42 +189,7 @@ style={{ minHeight: '100vh' }}
         </Card>
   </Grid> 
 
-  <Grid item xs={3}>
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image={img}
-        alt="Networking Goals"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Networking Goals
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Make new connections by establishing Networking Goals
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="large" onClick={handleClickNetworkingOpen}>Learn More</Button>
-        <Dialog
-        open={networkingOpen}
-        onClose={handleNetworkingClose}
-        >
-        <DialogTitle>Optional sizes</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            You can set my maximum width and whether to adapt or not.
-          </DialogContentText>
-          
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleNetworkingClose}>Close</Button>
-        </DialogActions>
-      </Dialog>
-      </CardActions>
-    </Card>
-  </Grid>
+  
 
 </Grid> 
 </div>
